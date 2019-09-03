@@ -137,7 +137,7 @@ class AtlasProxy(BaseProxy):
         elif field_name == 'column':
             sql = f"hive_column where  __state = \"ACTIVE\" and name like '{field_value}' select table"
             # TODO nanne: count tables instead of columns
-            count_sql = f"hive_column where name  __state = \"ACTIVE\" and like '{field_value}' select count()"
+            count_sql = f"hive_column where  __state = \"ACTIVE\" and name like '{field_value}' select count()"
 
         LOGGER.debug(f"Used following sql query: {sql}")
         tables: List[Table] = []
